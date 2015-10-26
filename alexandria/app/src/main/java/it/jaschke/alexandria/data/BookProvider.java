@@ -68,8 +68,7 @@ public class BookProvider extends ContentProvider {
     @Override
     public Cursor query(@NonNull Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         Cursor retCursor;
-        Log.v("quersy dis", String.valueOf(uri));
-        Log.v("quersy ID", String.valueOf(uriMatcher.match(uri)));
+
         switch (uriMatcher.match(uri)) {
             case BOOK:
                 retCursor=dbHelper.getReadableDatabase().query(

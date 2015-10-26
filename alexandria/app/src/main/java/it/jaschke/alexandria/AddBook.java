@@ -180,24 +180,21 @@ public class AddBook extends AppCompatActivity implements LoaderManager.LoaderCa
 
 
         String authorsData = data.getString(data.getColumnIndex(AlexandriaContract.AuthorEntry.AUTHOR));
-        String[] authorsArr = authorsData.split(",");
+        String[] authorsArr = authorsData != null ? authorsData.split(",") : new String[0];
+
 
         authors.setLines(authorsArr.length);
-        authors.setText(authorsData.replace(",", "\n"));
+        authors.setText(authorsData != null ? authorsData.replace(",", "\n") : "");
 
         String categoriesData = data.getString(data.getColumnIndex(AlexandriaContract.CategoryEntry.CATEGORY));
         categories.setText(categoriesData);
 
         String imgUrl = data.getString(data.getColumnIndex(AlexandriaContract.BookEntry.IMAGE_URL));
-        if (Patterns.WEB_URL.matcher(imgUrl).matches()) {
-            Glide.with(this)
-                    .load(imgUrl)
-                    .crossFade()
-                    .placeholder(R.color.primary_light)
-                    .into(bookCover);
-
-            findViewById(R.id.book_cover).setVisibility(View.VISIBLE);
-        }
+        Glide.with(this)
+                .load(imgUrl)
+                .crossFade()
+                .placeholder(R.color.primary_light)
+                .into(bookCover);
 
         hideBookCard(true);
     }
