@@ -84,11 +84,11 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.BookVi
             view.setSelected(!view.isSelected());
             if (!view.isSelected()) {
                 Utilities.ViewExpand.collapse(bookDesc);
-                show.setImageResource(R.drawable.ic_expand_less_36);
+                show.setImageResource(R.drawable.ic_expand_less_black_24dp);
             }
             else {
                 Utilities.ViewExpand.expand(bookDesc);
-                show.setImageResource(R.drawable.ic_expand_more_36);
+                show.setImageResource(R.drawable.ic_expand_more_black_24dp);
             }
         }
     }

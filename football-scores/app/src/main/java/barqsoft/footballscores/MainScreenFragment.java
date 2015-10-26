@@ -10,6 +10,7 @@ import android.support.v4.content.Loader;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
 
     public static final String PAGE_POSITION = "POSITION";
     private RecyclerView mRecyclerView;
-    private LinearLayoutManager mLayoutManager;
+    private StaggeredGridLayoutManager mLayoutManager;
 
     public static MainScreenFragment newInstance(int position) {
 
@@ -75,8 +76,10 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
         // in content do not change the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
 
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        // use a grid layout
+        mLayoutManager = new StaggeredGridLayoutManager(
+                getResources().getInteger(R.integer.columns), StaggeredGridLayoutManager.VERTICAL);
+
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)

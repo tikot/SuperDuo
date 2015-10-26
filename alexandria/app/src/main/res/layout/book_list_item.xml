@@ -33,7 +33,7 @@
 
                 <ImageButton android:id="@+id/show_desc"
                     android:layout_width="40dp" android:layout_height="40dp"
-                    android:layout_gravity="center|end" android:src="@drawable/ic_expand_less_36"
+                    android:layout_gravity="center|end" android:src="@drawable/ic_expand_less_black_24dp"
                     android:contentDescription="@string/show_expand"
                     style="?android:attr/borderlessButtonStyle" />
 

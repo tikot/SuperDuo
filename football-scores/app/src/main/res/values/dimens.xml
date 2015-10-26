@@ -22,4 +22,6 @@
     <dimen name="widget_icon_space">12dp</dimen>
     <dimen name="widget_title_size">20sp</dimen>
 
+    <integer name="columns">1</integer>
+
 </resources>
