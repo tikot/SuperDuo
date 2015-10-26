@@ -3,10 +3,7 @@
     package="it.jaschke.alexandria" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!--//TODO Check for network state-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -47,19 +44,9 @@
         <activity
             android:name=".scan.CaptureActivity"
             android:label="@string/title_capture"
+            android:screenOrientation="sensorLandscape"
+            android:windowSoftInputMode="stateAlwaysHidden"
             android:parentActivityName="it.jaschke.alexandria.AddBook" />
-
-
-        <!--android:screenOrientation="sensorLandscape"-->
-
-        <!--<activity-->
-            <!--android:name=".SettingsActivity"-->
-            <!--android:label="@string/title_activity_settings"-->
-            <!--android:parentActivityName=".MainActivity" >-->
-            <!--<meta-data-->
-                <!--android:name="android.support.PARENT_ACTIVITY"-->
-                <!--android:value=".MainActivity" />-->
-        <!--</activity>-->
 
         <provider
             android:name=".data.BookProvider"

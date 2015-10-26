@@ -238,7 +238,6 @@ public final class CaptureActivity extends Activity implements SurfaceHolder.Cal
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-
     }
 
     /**

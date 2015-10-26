@@ -12,7 +12,6 @@ import android.support.v4.view.MenuItemCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -74,7 +73,6 @@ public class MainActivityFragment extends Fragment implements
 
             @Override
             public void onClickDelete(String id) {
-                Log.v("id ", id);
                 Intent bookIntent = new Intent(getActivity(), BookService.class);
                 bookIntent.putExtra(BookService.EAN, id);
                 bookIntent.setAction(BookService.DELETE_BOOK);
@@ -89,7 +87,6 @@ public class MainActivityFragment extends Fragment implements
         addBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.v("teat", "is the click");
                 startAddBook();
             }
         });

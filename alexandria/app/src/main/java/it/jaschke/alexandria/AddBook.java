@@ -99,6 +99,7 @@ public class AddBook extends AppCompatActivity implements LoaderManager.LoaderCa
                 }
 
                 //Once we have an ISBN, start a book intent
+                //EAN_13
                 Intent bookIntent = new Intent(getApplicationContext(), BookService.class);
                 bookIntent.putExtra(BookService.EAN, ean);
                 bookIntent.setAction(BookService.FETCH_BOOK);
@@ -111,8 +112,6 @@ public class AddBook extends AppCompatActivity implements LoaderManager.LoaderCa
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //EAN_13
-
                 Intent intent = new Intent(AddBook.this, CaptureActivity.class);
                 startActivityForResult(intent, 0);
 
