@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context="it.jaschke.alexandria.AddBookActivity">
+
+    <android.support.design.widget.AppBarLayout android:id="@+id/app_bar"
+        android:layout_height="wrap_content" android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay" android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <include layout="@layout/toolbar" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
+            android:layout_gravity="center" app:counterEnabled="true"
+            app:counterMaxLength="13">
+
+            <EditText android:id="@+id/isbn_number"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:inputType="number" android:maxLength="13" android:minEms="13"
+                android:hint="@string/input_hint" android:textSize="@dimen/input_font"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/primary_light" />
+
+        </android.support.design.widget.TextInputLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/camera_scan"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin" android:src="@drawable/ic_camera_enhance_white_36dp"
+        app:elevation="6dp" app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end" app:rippleColor="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:showIn="@layout/activity_add_book"
+        tools:context="it.jaschke.alexandria.AddBookActivityFragment">
+
+        <include layout="@layout/add_book_item" />
+
+        <TextView android:id="@+id/book_status"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:gravity="center" android:text="@string/not_found"
+            android:visibility="invisible" android:textSize="@dimen/head_line"
+            tools:visibility="visible" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+
+
+
+

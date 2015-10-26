@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include layout="@layout/toolbar" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.RecyclerView android:id="@+id/list_books"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:padding="3dp" android:scrollbars="vertical"
+            tools:listitem="@layout/book_list_item" />
+
+
+        <TextView android:id="@+id/empty"
+            android:layout_width="match_parent" android:layout_height="match_parent"
+            android:gravity="center" android:visibility="gone"
+            android:textSize="@dimen/head_line" android:textColor="@color/secondary_text"
+            tools:text="@string/not_found" tools:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/add_book"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_add_white_36pt_2x" app:elevation="6dp"
+        app:layout_anchorGravity="bottom|right|end"
+        app:rippleColor="@android:color/white" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -3,9 +3,13 @@
     package="it.jaschke.alexandria" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--//TODO Check for network state-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
 
     <application
@@ -19,28 +23,53 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:label="@string/title_activity_settings"
-            android:name=".SettingsActivity"
+            android:name=".AddBook"
+            android:label="@string/title_activity_add_book"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value="it.jaschke.alexandria.MainActivity" />
+        </activity>
+        <activity
+            android:name=".About"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="it.jaschke.alexandria.MainActivity" />
         </activity>
 
+        <activity
+            android:name=".scan.CaptureActivity"
+            android:label="@string/title_capture"
+            android:parentActivityName="it.jaschke.alexandria.AddBook" />
 
+
+        <!--android:screenOrientation="sensorLandscape"-->
+
+        <!--<activity-->
+            <!--android:name=".SettingsActivity"-->
+            <!--android:label="@string/title_activity_settings"-->
+            <!--android:parentActivityName=".MainActivity" >-->
+            <!--<meta-data-->
+                <!--android:name="android.support.PARENT_ACTIVITY"-->
+                <!--android:value=".MainActivity" />-->
+        <!--</activity>-->
 
         <provider
             android:name=".data.BookProvider"
             android:authorities="it.jaschke.alexandria"
             android:exported="false" />
+
         <service
             android:name=".services.BookService"
-            android:exported="false" >
-        </service>
+            android:exported="false" />
+
     </application>
 
 </manifest>

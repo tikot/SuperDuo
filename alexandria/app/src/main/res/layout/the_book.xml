@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="16dp" android:orientation="horizontal"
+    android:id="@+id/the_book">
+
+    <LinearLayout
+        android:layout_width="0dp" android:layout_height="wrap_content"
+        android:layout_weight="1" android:orientation="vertical">
+
+        <TextView android:id="@+id/authors"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:gravity="end" android:textSize="@dimen/small_fontsize"
+            tools:text="@string/tools_by_authors" />
+
+        <TextView android:id="@+id/book_title"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="@dimen/head_line" android:textIsSelectable="true"
+            android:textStyle="bold" tools:text="@string/tools_book_title" />
+
+        <TextView android:id="@+id/book_sub_title"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:maxLines="2" android:textColor="@color/secondary_text"
+            android:ellipsize="end" tools:text="@string/tools_book_sub_title" />
+
+        <TextView android:id="@+id/categories"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/accent" android:textSize="@dimen/small_fontsize"
+            tools:text="@string/tools_categories" />
+
+    </LinearLayout>
+
+    <ImageView android:id="@+id/book_cover"
+        android:layout_width="100dp" android:layout_height="150dp"
+        android:contentDescription="@string/book_cover" tools:src="@drawable/book_cover" />
+
+</LinearLayout>
+

@@ -23,7 +23,6 @@ import it.jaschke.alexandria.MainActivity;
 import it.jaschke.alexandria.R;
 import it.jaschke.alexandria.data.AlexandriaContract;
 
-
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
  * a service on a separate handler thread.
@@ -71,8 +70,7 @@ public class BookService extends IntentService {
      * parameters.
      */
     private void fetchBook(String ean) {
-
-        if(ean.length()!=13){
+        if (ean == null || ean.length() != 13) {
             return;
         }
 
@@ -84,7 +82,7 @@ public class BookService extends IntentService {
                 null  // sort order
         );
 
-        if(bookEntry.getCount()>0){
+        if (bookEntry.getCount() > 0) {
             bookEntry.close();
             return;
         }

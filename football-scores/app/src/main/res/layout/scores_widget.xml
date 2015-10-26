@@ -1,0 +1,53 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/widget_margin"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/widget_action_bar_height"
+        android:background="@color/primary_dark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="@dimen/widget_title_size"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:paddingLeft="@dimen/widget_icon_space"
+            android:paddingStart="@dimen/widget_icon_space"
+            android:id="@+id/app_title" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <ListView
+            android:id="@+id/scores_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="1dp"
+            android:divider="@color/secondary_text"
+            tools:listitem="@layout/scores_widget_list_item" />
+
+        <TextView
+            android:id="@+id/scores_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="@color/primary_text"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:text="@string/no_game" />
+
+    </FrameLayout>
+
+</LinearLayout>

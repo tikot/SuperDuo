@@ -1,10 +1,25 @@
 <resources>
+
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="list_horizonal_matgin">2dp</dimen>
-    <dimen name="share_button_margin">150dp</dimen>
-    <dimen name="TeamNames">17sp</dimen>
-    <dimen name="Score">30sp</dimen>
-    <dimen name="League">15sp</dimen>
+
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="actions_padding">8dp</dimen>
+
+    <dimen name="title_size">24sp</dimen>
+    <dimen name="text_size">14sp</dimen>
+    <dimen name="team_name_size">17sp</dimen>
+    <dimen name="score_size">30sp</dimen>
+
+    <!--
+        Refer to App Widget Documentation for margin information
+        http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
+    -->
+    <dimen name="widget_margin">8dp</dimen>
+    <dimen name="widget_action_bar_height">45dp</dimen>
+    <dimen name="widget_icon_space">12dp</dimen>
+    <dimen name="widget_title_size">20sp</dimen>
+
 </resources>

@@ -1,15 +1,10 @@
 package it.jaschke.alexandria.data;
 
-/**
- * Created by saj on 22/12/14.
- */
-
 import android.content.ContentUris;
 import android.net.Uri;
 import android.provider.BaseColumns;
-import android.util.Log;
 
-public class AlexandriaContract{
+public class AlexandriaContract {
 
     public static final String CONTENT_AUTHORITY = "it.jaschke.alexandria";
 
@@ -20,6 +15,11 @@ public class AlexandriaContract{
     public static final String PATH_CATEGORIES = "categories";
 
     public static final String PATH_FULLBOOK = "fullbook";
+
+
+    public String[] colNames = {
+            "_id", "title", "subtitle", "imgurl", "description", "author", "category"
+    };
 
     public static final class BookEntry implements BaseColumns {
         public static final Uri CONTENT_URI = BASE_CONTENT_URI.buildUpon().appendPath(PATH_BOOKS).build();
